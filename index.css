@@ -23,6 +23,16 @@ nav{
     color: rgb(133, 76, 230);
 }
 
+.nav-item:hover{
+    background-color: rgb(133, 76, 230);
+    .signInLogo{
+        color: #fff;
+    }
+    .signInTitle{
+        color: #fff;
+    }
+}
+
 .navbar-brand{
     font-weight: 600 !important;
     font-size: 25px !important;
