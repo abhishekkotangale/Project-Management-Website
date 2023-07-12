@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat,sans-serif;
+    background: rgb(19,17,28);
+}
+
+nav{
+    background-color: rgb(19,17,28);
+    height: 70px !important;
+    padding-top: 20px !important;
+}
+
+.nav-item{
+    border: 1px solid rgb(133, 76, 230);
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.signInLogo{
+    color: rgb(133, 76, 230);
+}
+
+.navbar-brand{
+    font-weight: 600 !important;
+    font-size: 25px !important;
+    color: rgb(133, 76, 230)!important;
+}
+
+.signInTitle{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    color: rgb(133, 76, 230);
+    font-size: 15px;
+}
+
+.landingpage-info{
+    padding-top: 80px;
+}
+
+.landing-page-heading{
+    color: #fff;
+    font-size: 60px;
+    padding-top: 80px;
+}
+
+.manage-project-button a{
+    text-decoration: none;
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+    padding: 16px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(76.35deg, rgb(128, 26, 230) 15.89%, rgb(162, 26, 230) 89.75%);
+    color: rgb(242, 243, 244);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
