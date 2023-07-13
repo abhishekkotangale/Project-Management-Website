@@ -143,3 +143,16 @@ footer{
 footer p{
     color: lightgrey;
 }
+
+.modal-dialog{
+    margin-top: 150px;
+    background-color: rgb(28, 30, 39) !important;
+}
+
+.modal-content{
+    padding: 10px;
+}
+
+.btn-close{
+    color: red !important;
+}
