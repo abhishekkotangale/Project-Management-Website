@@ -156,3 +156,62 @@ footer p{
 .btn-close{
     color: red !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+.signup,.login{
+    color: white;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .signup-form,
+  .login-form{
+    padding: 40px;
+    padding-top: 5px;
+    clear: both;
+    width: 100%;
+    box-sizing: border-box;
+    height: 350px;
+  }
+  
+  .input{
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    background-color: rgb(28, 30, 39);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid rgb(140, 151, 154);
+    color: #3e3e40;
+    font-size: 14px;
+    outline: none;
+    transform: all 0.5s ease;
+  }
+  
+  .input:focus{
+    border: 2px solid rgb(140, 151, 154);
+  }
+  
+  .btn{
+    width: 100%;
+    border-radius: 12px;
+    background: rgb(55, 61, 63);
+    height: 44px;
+    border: none;
+    color: rgb(140, 151, 154);
+  }
+  
+ 
