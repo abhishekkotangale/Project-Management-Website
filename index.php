@@ -12,48 +12,60 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0"></script>
+    <script src="toast.js"></script>
+    <link rel="stylesheet" href="toast.css">
 </head>
 <body>
 
-  <?php 
+<?php 
 
-      include 'common/connection.php';
+    include 'common/connection.php';
 
-      if(isset($_POST['submit'])){
-          $username = mysqli_real_escape_string($con , $_POST['username']);
-          $email = mysqli_real_escape_string($con , $_POST['email']);
-          $password = mysqli_real_escape_string($con , $_POST['password']);
+    if(isset($_POST['submit'])){
+        $username = mysqli_real_escape_string($con , $_POST['username']);
+        $email = mysqli_real_escape_string($con , $_POST['email']);
+        $password = mysqli_real_escape_string($con , $_POST['password']);
 
-          $pass = password_hash($password, PASSWORD_BCRYPT);
+        $pass = password_hash($password, PASSWORD_BCRYPT);
 
 
-          $emailquery = "select * from user where email='$email' ";
-    
-          $query = mysqli_query($con,$emailquery);
-    
-          $emailcount = mysqli_num_rows($query);
-          if($emailcount > 0){
-            echo "email exist";
-          }else{
-            $insertquery = " insert into user (username , email , password) values('$username','$email','$pass') ";
-            $iquery = mysqli_query($con,$insertquery);
+        $emailquery = "select * from user where email='$email' ";
+        $query = mysqli_query($con,$emailquery);
 
-            if($iquery){
-              ?>
-                <script>
-                    alert("inserted Successful");
-                </script> 
-              <?php
-            }else{
-                ?>  
+        $emailcount = mysqli_num_rows($query);
+
+        if($emailcount > 0){
+          ?>
             <script>
-                alert("not inserted");
+              emailExist();
             </script>
-            <?php
-            }
+          <?php
+        }else{
+                $insertquery = " insert into user (username , email , password) values('$username','$email','$pass') ";
+                $iquery = mysqli_query($con,$insertquery);
+
+                if($iquery){
+                    ?>
+                    <script>
+                        accountCreated();
+                    </script>
+                    
+                    <?php
+                }else{
+                    ?>
+                    
+                <script>
+                    ErrorAccount();
+                </script>
+                
+                <?php
+                }
         }
-      }
-  ?>
+
+    }
+
+    ?>
    
     
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -82,11 +94,12 @@
             </div>
             
             <div class="signup-form">
-              <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
                 <input type="text" placeholder="Choose a Username" class="input" name="username"><br />
                 <input type="email" placeholder="Your Email Address" class="input" name="email"><br />
                 <input type="password" placeholder="Choose a Password" class="input" name="password"><br />
-                <button  type="submit" name="submit" class="btn">Create Account</button>
+                <button  type="submit" name="submit" style="width: 100%; border-radius: 12px; background: rgb(55, 61, 63); height: 44px;border: none; color: rgb(140, 151, 154);">Create Account</button>
+                <!-- <div class="btn" type="submit" name="submit">Create account</div> -->
               </form>
             </div>
             
@@ -94,7 +107,7 @@
                 <form action="login.php" method="post">
                   <input type="text" placeholder="Email or Username" class="input" name="email"><br />
                   <input type="password" placeholder="Password" class="input" name="password"><br />
-                  <button  type="submit" name="submit" class="btn">Sign In</button>
+                  <button  type="submit" name="submit" style="width: 100%; border-radius: 12px; background: rgb(55, 61, 63); height: 44px; border: none; color: rgb(140, 151, 154);">Sign In</button>
                 </form>
              </div>
             

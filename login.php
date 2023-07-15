@@ -1,8 +1,13 @@
-<?php 
+<html>
+    <head>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0"></script>
+    <script src="toast.js"></script>
+    <link rel="stylesheet" href="toast.css">
+    </head>
+<body>
+    <?php 
 
-    include 'common/connection.php';
-
-    
+        include 'common/connection.php';
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -24,10 +29,24 @@
             if($pass_decode){
                 header("location:home.php");
             }else{
-                echo "password not match";
+                ?>
+                <script>
+                    alert("Password Not Match");
+                </script>
+            <?php
+            header("location:index.php");
             }
         }else{
-            echo "email incorrect";
+            ?>
+                <script>
+                    alert("email not present");
+                </script>
+            <?php
+            header("location:index.php");
+            
         }
 
     ?>
+</body>
+
+</html>
