@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Milestones</title>
-
+    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="index.css">
@@ -14,6 +14,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
+
+  <?php 
+
+      include 'common/connection.php';
+
+      if(isset($_POST['submit'])){
+          $username = mysqli_real_escape_string($con , $_POST['username']);
+          $email = mysqli_real_escape_string($con , $_POST['email']);
+          $password = mysqli_real_escape_string($con , $_POST['password']);
+
+          $pass = password_hash($password, PASSWORD_BCRYPT);
+
+
+          $emailquery = "select * from user where email='$email' ";
+    
+          $query = mysqli_query($con,$emailquery);
+    
+          $emailcount = mysqli_num_rows($query);
+          if($emailcount > 0){
+            echo "email exist";
+          }else{
+            $insertquery = " insert into user (username , email , password) values('$username','$email','$pass') ";
+            $iquery = mysqli_query($con,$insertquery);
+
+            if($iquery){
+              ?>
+                <script>
+                    alert("inserted Successful");
+                </script> 
+              <?php
+            }else{
+                ?>  
+            <script>
+                alert("not inserted");
+            </script>
+            <?php
+            }
+        }
+      }
+  ?>
+   
     
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
@@ -35,23 +76,19 @@
             <div class="ms-auto">
               <i data-lucide="x-circle" data-bs-dismiss="modal" aria-label="Close" style="color: white; cursor:pointer;"></i>
             </div>
-
+            <div class="d-flex p-md-4 row">
+              <div class="signup col-6">Sign Up</div>
+              <div class="login col-6">Log In</div>
+            </div>
             
-           
-              <div class="d-flex p-md-4 row">
-                <div class="signup col-6">Sign Up</div>
-                <div class="login col-6">Log In</div>
-              </div>
-            
-            
-             <div class="signup-form">
-                <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-                  <input type="text" placeholder="Choose a Username" class="input" name="username"><br />
-                  <input type="email" placeholder="Your Email Address" class="input" name="email"><br />
-                  <input type="password" placeholder="Choose a Password" class="input" name="password"><br />
-                  <button  type="submit" name="submit" class="btn">Create Account</button>
-                </form>
-             </div>
+            <div class="signup-form">
+              <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+                <input type="text" placeholder="Choose a Username" class="input" name="username"><br />
+                <input type="email" placeholder="Your Email Address" class="input" name="email"><br />
+                <input type="password" placeholder="Choose a Password" class="input" name="password"><br />
+                <button  type="submit" name="submit" class="btn">Create Account</button>
+              </form>
+            </div>
             
             <div class="login-form">
                 <form action="login.php" method="post">
