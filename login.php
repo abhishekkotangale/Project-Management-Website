@@ -26,8 +26,10 @@
 
             $pass_decode = password_verify($password,$db_pass);
 
-            if($pass_decode){
-                header("location:home.php");
+            if(($email_pass['status'] == 'Not Active') and $pass_decode){
+                header("location:otp.php");
+            }else if(($email_pass['status'] == 'Active') and $pass_decode){
+                header('location:home.php');
             }else{
                 ?>
                 <script>

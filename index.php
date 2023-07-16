@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,12 +50,13 @@
                 $iquery = mysqli_query($con,$insertquery);
 
                 if($iquery){
-                    ?>
-                    <script>
-                        accountCreated();
-                    </script>
-                    
-                    <?php
+                  $email_search = "select * from user where email = '$email'";
+                  $query = mysqli_query($con , $email_search);
+                  $email_count = mysqli_num_rows($query);
+                  $email_pass = mysqli_fetch_assoc($query);
+                  $_SESSION['uid'] = $email_pass['uid'];
+                  $_SESSION['email'] = $email_pass['email'];
+                  header("location:otp.php");
                 }else{
                     ?>
                     
