@@ -1,5 +1,5 @@
 <?php
-  session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0"></script>
-    <script src="toast.js"></script>
-    <link rel="stylesheet" href="toast.css">
+    <script src="js/toast.js"></script>
+    <link rel="stylesheet" href="js/toast.css">
 </head>
 <body>
 
@@ -34,7 +34,7 @@
         $pass = password_hash($password, PASSWORD_BCRYPT);
 
 
-        $emailquery = "select * from user where email='$email' ";
+        $emailquery = "select * from users where email='$email' ";
         $query = mysqli_query($con,$emailquery);
 
         $emailcount = mysqli_num_rows($query);
@@ -46,17 +46,18 @@
             </script>
           <?php
         }else{
-                $insertquery = " insert into user (username , email , password) values('$username','$email','$pass') ";
+                $unique = rand(10000000,99999999);
+                $insertquery = " insert into users (username , email , unique_id , password ) values('$username','$email','$unique','$pass') ";
                 $iquery = mysqli_query($con,$insertquery);
 
                 if($iquery){
-                  $email_search = "select * from user where email = '$email'";
+                  $email_search = "select * from users where email = '$email'";
                   $query = mysqli_query($con , $email_search);
                   $email_count = mysqli_num_rows($query);
                   $email_pass = mysqli_fetch_assoc($query);
                   $_SESSION['uid'] = $email_pass['uid'];
                   $_SESSION['email'] = $email_pass['email'];
-                  header("location:otp.php");
+                  header("location:login_signup/sendotp.php");
                 }else{
                     ?>
                     
@@ -109,7 +110,7 @@
             </div>
             
             <div class="login-form">
-                <form action="login.php" method="post">
+                <form action="login_signup/login.php" method="post">
                   <input type="text" placeholder="Email or Username" class="input" name="email"><br />
                   <input type="password" placeholder="Password" class="input" name="password"><br />
                   <button  type="submit" name="submit" style="width: 100%; border-radius: 12px; background: rgb(55, 61, 63); height: 44px; border: none; color: rgb(140, 151, 154);">Sign In</button>
@@ -126,12 +127,16 @@
 
       <div class="container landingpage-info">
         <div class="row">
-            <div class="col-lg-7 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6">
               <h1 class="landing-page-heading">Power Your Projects <br> with Our App.</h1>
-              <div class="pt-5 manage-project-button"><a href="">Manage a New Project</a></div>
+              <div class="pt-5 manage-project-button" data-bs-toggle="modal" data-bs-target="#exampleModal"><a class="text-white">Manage a New Project</a></div>
             </div>
-            <div class="col-lg-5 col-md-6 col-sm-12">
-              <img src="assets/icon/workflow.png" alt="" srcset="" class="image-responsive">
+            <div class="col-lg-6 col-md-6">
+              <center>
+              <div class="milestone-img">
+                <img src="assets/icon/workflow.png" alt="" srcset="" class="milestone-image">
+              </div>
+              </center>
             </div>
           </div>
       </div>

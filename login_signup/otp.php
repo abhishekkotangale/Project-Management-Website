@@ -14,8 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0"></script>
-    <script src="toast.js"></script>
-    <link rel="stylesheet" href="toast.css">
+    <script src="../js/toast.js"></script>
+    <link rel="stylesheet" href="../js/toast.css">
     <style>
         body{
             background-color: rgb(28, 30, 39);
@@ -56,55 +56,6 @@
 
 </head>
 <body>
-
-
-
-    
-<?php 
-
-session_start();
-include('common/connection.php');
-
-echo $_SESSION['email'];
-$uid = $_SESSION['uid'];
-echo $uid;
-$num =  rand(100000,999999);
-
-$to = $_SESSION['email'];
-$subject = "OTP for Account Verification";
-$message = $num;
-
-$retval = mail ($to,$subject,$message);
-     
-     if( $retval == true ) {
-        ?>
-            <script>
-                otp();
-            </script>
-        <?php
-     }else {
-        ?>
-            <script>
-                otpNotSent();
-            </script>
-        <?php
-     }
-
-     $showquery = "select * from user where uid='$uid' ";
-     $showData = mysqli_query($con,$showquery);
- 
-     $result = mysqli_fetch_array($showData);
- 
-         $updatequery = "update user set otp='$num' where uid='$uid'";
- 
-         $query = mysqli_query($con,$updatequery);
- 
-         if($query){
-             echo "inserted";
-         }else{
-             echo "not inserted";
-         }
-?>
 
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">

@@ -1,5 +1,6 @@
 $(".login-form").hide();
 $(".login").css("background", "none");
+$(".signup").css("border-bottom", "2px solid rgb(133, 76, 230)");
 
 $(".login").click(function(){
   $(".signup-form").hide();

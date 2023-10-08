@@ -1,9 +1,13 @@
 <?php
     session_start();
-    include('common/connection.php');
+    if(!isset($_SESSION['username'])){
+        header('location:../index.php');
+    }
+
+    include('../common/connection.php');
     $uid = $_SESSION['uid'];
     $otp = $_POST['otp'];
-    $showquery = "select * from user where uid='$uid' ";
+    $showquery = "select * from users where uid='$uid' ";
     $showData = mysqli_query($con,$showquery);
      
     $result = mysqli_fetch_array($showData);
@@ -11,10 +15,10 @@
     if($otp === $result['otp']){
 
         
-        $newupdatequery = "update user set status='Active' where uid='$uid'";
+        $newupdatequery = "update users set status='Active' where uid='$uid'";
         $nquery = mysqli_query($con,$newupdatequery);
         if($nquery){
-            header('location:home.php');
+            header('location:../admin/dashboard.php');
         }else{
             echo "not inserted";
         }

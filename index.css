@@ -207,4 +207,97 @@ footer p{
   
 
   
- 
+  @media (max-width: 576px) {
+    .landingpage-info{
+        margin-top: 50px;
+    }
+    .landing-page-heading{
+        font-size: 35px;
+        font-weight: bold;
+    }
+    .milestone-img img {
+        padding-top: 25px;
+        width: 250px !important;
+        height: 250px !important;
+    }
+    .manage-project-button{
+        margin-top: -15px;
+    }
+    .manage-project-button a{
+        text-decoration: none;
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+        padding: 16px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        background: linear-gradient(76.35deg, rgb(128, 26, 230) 15.89%, rgb(162, 26, 230) 89.75%);
+        color: rgb(242, 243, 244);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    .landingpage-info{
+        margin-top: 50px;
+    }
+    .landing-page-heading{
+        font-size: 32px;
+        font-weight: bold;
+    }
+    .milestone-img img {
+        padding-top: 25px;
+        width: 360x !important;
+        height: 360px !important;
+    }
+    .manage-project-button{
+        margin-top: -15px;
+    }
+    .manage-project-button a{
+        text-decoration: none;
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+        padding: 16px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        background: linear-gradient(76.35deg, rgb(128, 26, 230) 15.89%, rgb(162, 26, 230) 89.75%);
+        color: rgb(242, 243, 244);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .landingpage-info{
+        margin-top: 50px;
+    }
+    .landing-page-heading{
+        font-size: 45px;
+        font-weight: bold;
+    }
+    .manage-project-button{
+        margin-top: -15px;
+    }
+    .manage-project-button a{
+        text-decoration: none;
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+        padding: 16px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        background: linear-gradient(76.35deg, rgb(128, 26, 230) 15.89%, rgb(162, 26, 230) 89.75%);
+        color: rgb(242, 243, 244);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .milestone-img img {
+        padding-top: 25px;
+        width: 400px !important;
+        height: 400px !important;
+    }
+}
