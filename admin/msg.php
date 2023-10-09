@@ -1,9 +1,5 @@
-<?php
+<?php 
 session_start();
-if (!isset($_SESSION['username'])) {
-    header('location: ../index.php');
-}
-
 if (isset($_SESSION['unique_id'])) {
     include_once "../common/connection.php";
 
@@ -19,13 +15,12 @@ if (isset($_SESSION['unique_id'])) {
         $result = mysqli_query($con, $sql);
         
         if ($result) {
-            http_response_code(204);
+            header("Location: viewtask.php?tid=$tid");
+            exit(); 
         } else {
-            http_response_code(500);
             echo "Error: " . mysqli_error($con);
         }
     } else {
-        http_response_code(400);
         echo "Message cannot be empty.";
     }
 } else {
