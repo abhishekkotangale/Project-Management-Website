@@ -88,13 +88,13 @@
       </nav>
 
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="width: 380px !important;">
+        <div class="modal-dialog">
           <div class="modal-content" style="background-color: rgb(28, 30, 39) !important;">
            
             <div class="ms-auto">
               <i data-lucide="x-circle" data-bs-dismiss="modal" aria-label="Close" style="color: white; cursor:pointer;"></i>
             </div>
-            <div class="d-flex p-md-4 row">
+            <div class="d-flex p-4 row">
               <div class="signup col-6">Sign Up</div>
               <div class="login col-6">Log In</div>
             </div>
@@ -134,7 +134,7 @@
             <div class="col-lg-6 col-md-6">
               <center>
               <div class="milestone-img">
-                <img src="assets/icon/workflow.png" alt="" srcset="" class="milestone-image">
+                <img src="assets/icon/workflow.png" alt="" srcset="" class="img-fluid ">
               </div>
               </center>
             </div>
@@ -144,25 +144,25 @@
       <div class="container features">
         <div class="title text-center">Key Features</div>
         <center>
-            <div class="container">
+            <div class="container feature">
                 <div class="row p-4 features-container">
                     <div class="col-6 features-info">
-                        <h1>Lorem Ipsum</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1>Task Management</h1>
+                        <p>Easily create, assign, and monitor project.</p>
                     </div>
                     <div class="col-6 features-info">
-                        <h1>Lorem Ipsum</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1>Notifications and Alerts</h1>
+                        <p>Ensure users don't miss important updates.</p>
                     </div>
                 </div>
                 <div class="row p-4 features-container">
                     <div class="col-6 features-info">
-                        <h1>Lorem Ipsum</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1>Customization</h1>
+                        <p>Easily Customize Project ex:- update project & remove user.</p>
                     </div>
                     <div class="col-6 features-info">
-                        <h1>Lorem Ipsum</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1>Real-time Communication</h1>
+                        <p> Enable instant communication.</p>
                     </div>
                 
                 </div>
@@ -176,22 +176,22 @@
             <div class="container">
                 <div class="row p-4 benefits-container">
                     <div class="col-6 benefits-info">
-                        <h1>Lorem Ipsum</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1>Increased Efficiency</h1>
+                        <p>Streamline project workflows for faster and more efficient execution.</p>
                     </div>
                     <div class="col-6 benefits-info">
-                        <h1>Lorem Ipsum</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1>Time Savings</h1>
+                        <p>Accelerate project completion.</p>
                     </div>
                 </div>
                 <div class="row p-4 benefits-container">
                     <div class="col-6 benefits-info">
-                        <h1>Lorem Ipsum</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1>Improved Productivity</h1>
+                        <p>Boost efficiency and output for your projects.</p>
                     </div>
                     <div class="col-6 benefits-info">
-                        <h1>Lorem Ipsum</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1>Privacy and Security</h1>
+                        <p>Ensure the confidentiality and safety of sensitive project data.</p>
                     </div>
                 
                 </div>

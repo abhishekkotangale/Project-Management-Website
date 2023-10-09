@@ -145,6 +145,7 @@ footer p{
 }
 
 .modal-dialog{
+    width : 380px;
     margin-top: 150px;
     background-color: rgb(28, 30, 39) !important;
 }
@@ -209,7 +210,7 @@ footer p{
   
   @media (max-width: 576px) {
     .landingpage-info{
-        margin-top: 50px;
+        margin-top: 30px;
     }
     .landing-page-heading{
         font-size: 35px;
@@ -217,8 +218,8 @@ footer p{
     }
     .milestone-img img {
         padding-top: 25px;
-        width: 250px !important;
-        height: 250px !important;
+        width: 150px !important;
+        height: 150px !important;
     }
     .manage-project-button{
         margin-top: -15px;
@@ -236,6 +237,7 @@ footer p{
         border-radius: 10px;
         cursor: pointer;
     }
+    
 }
 
 @media (max-width: 768px) {
@@ -273,7 +275,7 @@ footer p{
 
 @media (max-width: 992px) {
     .landingpage-info{
-        margin-top: 50px;
+        margin-top: 150px;
     }
     .landing-page-heading{
         font-size: 45px;
