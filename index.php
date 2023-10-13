@@ -115,6 +115,7 @@
                   <input type="password" placeholder="Password" class="input" name="password"><br />
                   <button  type="submit" name="submit" style="width: 100%; border-radius: 12px; background: rgb(55, 61, 63); height: 44px; border: none; color: rgb(140, 151, 154);">Sign In</button>
                 </form>
+                <a href="login_signup/forgotPass.php" style=" text-decoration: none ; color: rgb(133, 76, 230); float:right; margin-top:25px;">Forgot Password ?</a>
              </div>
             
           </div>
